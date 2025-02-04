@@ -53,7 +53,7 @@ app.use(homePageRoutes);
 
 
 
-mongoose.connect("mongodb://localhost:27017/expenses")
+mongoose.connect(process.env.MONGODB_CONNECTION_STRING)
     .then((result) => {
         console.log("Connected to mongoDB");
         app.listen(process.env.PORT);
